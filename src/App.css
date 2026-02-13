@@ -12,8 +12,6 @@
   text-align: center;
   box-shadow: var(--shadow-lg);
   border-bottom: 1px solid rgba(99, 102, 241, 0.1);
-  position: sticky;
-  top: 0;
   z-index: 100;
 }
 
@@ -167,22 +165,42 @@
 }
 
 @media (max-width: 768px) {
+  .app-header {
+    padding: 1.5rem 1rem;
+  }
+
   .app-header h1 {
     font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
   }
 
   .main-nav {
     gap: 0.5rem;
     padding: 1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .nav-item {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .nav-item span {
+    display: none;
   }
 
   .app-content {
     padding: 1rem;
+  }
+
+  .app-footer {
+    padding: 1.5rem 1rem;
   }
 
   .credits {
