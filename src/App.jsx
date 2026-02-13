@@ -87,7 +87,7 @@ function App() {
           <p className="exam-info">מבוסס על חומרי הקורס של פרופ' בלה ברובר-לובובסקי</p>
           <div className="credits">
             <p className="credit-item">
-              <span className="credit-label">פיתוח הפלטפורמה:</span>
+              <span className="credit-label">איפיון ופיתוח:</span>
               <span className="credit-name">מוטי פרץ</span>
             </p>
             <p className="credit-item">
