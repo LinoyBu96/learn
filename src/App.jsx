@@ -85,6 +85,26 @@ function App() {
         <footer className="app-footer">
           <p>© 2026 - אפליקציה ללימוד מודרניזם במוזיקה</p>
           <p className="exam-info">מבוסס על חומרי הקורס של פרופ' בלה ברובר-לובובסקי</p>
+          
+          <div className="disclaimer">
+            <p>
+              ⚠️ <strong>הצהרת אחריות:</strong> אתר זה נוצר למטרות לימודיות בלבד. 
+              יוצרי האתר והתוכן אינם אחראים לנכונות, דיוק או שלמות המידע המוצג. 
+              המידע באתר מבוסס על חומרי הקורס ועל סיכומים של סטודנטים, ואינו מהווה תחליף לחומרי הלימוד הרשמיים. 
+              השימוש באתר הוא באחריות המשתמש בלבד.
+            </p>
+          </div>
+
+          <div className="credits">
+            <p className="credit-item">
+              <span className="credit-label">איפיון ופיתוח:</span>
+              <span className="credit-name">מוטי פרץ</span>
+            </p>
+            <p className="credit-item">
+              <span className="credit-label">סיכום החומר:</span>
+              <span className="credit-name">דניאל טרסולה</span>
+            </p>
+          </div>
         </footer>
       </div>
     </Router>

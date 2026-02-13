@@ -58,6 +58,8 @@ body {
   direction: rtl;
   color: var(--text-primary);
   line-height: 1.6;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 code {
@@ -71,6 +73,8 @@ code {
 
 #root {
   min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* Scrollbar styling - עיצוב מודרני */

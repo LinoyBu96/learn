@@ -12,8 +12,6 @@
   text-align: center;
   box-shadow: var(--shadow-lg);
   border-bottom: 1px solid rgba(99, 102, 241, 0.1);
-  position: sticky;
-  top: 0;
   z-index: 100;
 }
 
@@ -134,23 +132,120 @@
   font-weight: 400;
 }
 
+.disclaimer {
+  margin-top: 1.5rem;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 243, 205, 0.3);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  border-radius: var(--radius-md);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.disclaimer p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  text-align: center;
+}
+
+.disclaimer strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.credits {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.credit-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.credit-label {
+  color: var(--text-tertiary);
+  font-weight: 400;
+}
+
+.credit-name {
+  color: var(--primary-dark);
+  font-weight: 700;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 @media (max-width: 768px) {
+  .app-header {
+    padding: 1.5rem 1rem;
+  }
+
   .app-header h1 {
     font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
   }
 
   .main-nav {
     gap: 0.5rem;
     padding: 1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .nav-item {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .nav-item span {
+    display: none;
   }
 
   .app-content {
     padding: 1rem;
+  }
+
+  .app-footer {
+    padding: 1.5rem 1rem;
+  }
+
+  .disclaimer {
+    padding: 0.75rem 1rem;
+    margin-top: 1rem;
+  }
+
+  .disclaimer p {
+    font-size: 0.8rem;
+    text-align: right;
+  }
+
+  .credits {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .credit-item {
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: center;
   }
 }
 
