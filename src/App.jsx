@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom'
 import { Clock, BookOpen, Music, Home, Map, ListMusic } from 'lucide-react'
 import Timeline from './components/Timeline'
 import Flashcards from './components/Flashcards'
@@ -9,11 +9,41 @@ import ComposerMap from './components/ComposerMap'
 import ListeningList from './components/ListeningList'
 import './App.css'
 
+// Component to track page views
+function GoogleAnalyticsTracker() {
+  const location = useLocation()
+
+  useEffect(() => {
+    // Send page view to Google Analytics on route change
+    if (typeof window.gtag !== 'undefined') {
+      window.gtag('config', 'G-27SJ2X7HF5', {
+        page_path: location.pathname + location.search + location.hash,
+      })
+    }
+  }, [location])
+
+  return null
+}
+
 function App() {
   const [activeTab, setActiveTab] = useState('home')
 
+  const handleNavClick = (tabName, tabLabel) => {
+    setActiveTab(tabName)
+    
+    // Send event to Google Analytics
+    if (typeof window.gtag !== 'undefined') {
+      window.gtag('event', 'navigation_click', {
+        event_category: 'Navigation',
+        event_label: tabLabel,
+        page_path: `/${tabName === 'home' ? '' : tabName}`
+      })
+    }
+  }
+
   return (
     <Router>
+      <GoogleAnalyticsTracker />
       <div className="app">
         <header className="app-header">
           <h1>מודרניזם במוזיקה - עזר למבחן</h1>
@@ -24,7 +54,7 @@ function App() {
           <Link 
             to="/" 
             className={`nav-item ${activeTab === 'home' ? 'active' : ''}`}
-            onClick={() => setActiveTab('home')}
+            onClick={() => handleNavClick('home', 'דף הבית')}
           >
             <Home size={24} />
             <span>דף הבית</span>
@@ -32,7 +62,7 @@ function App() {
           <Link 
             to="/timeline" 
             className={`nav-item ${activeTab === 'timeline' ? 'active' : ''}`}
-            onClick={() => setActiveTab('timeline')}
+            onClick={() => handleNavClick('timeline', 'ציר הזמן')}
           >
             <Clock size={24} />
             <span>ציר הזמן</span>
@@ -40,7 +70,7 @@ function App() {
           <Link 
             to="/map" 
             className={`nav-item ${activeTab === 'map' ? 'active' : ''}`}
-            onClick={() => setActiveTab('map')}
+            onClick={() => handleNavClick('map', 'מפת מלחינים')}
           >
             <Map size={24} />
             <span>מפת מלחינים</span>
@@ -48,7 +78,7 @@ function App() {
           <Link 
             to="/flashcards" 
             className={`nav-item ${activeTab === 'flashcards' ? 'active' : ''}`}
-            onClick={() => setActiveTab('flashcards')}
+            onClick={() => handleNavClick('flashcards', 'כרטיסיות מושגים')}
           >
             <BookOpen size={24} />
             <span>כרטיסיות מושגים</span>
@@ -56,7 +86,7 @@ function App() {
           <Link 
             to="/listening" 
             className={`nav-item ${activeTab === 'listening' ? 'active' : ''}`}
-            onClick={() => setActiveTab('listening')}
+            onClick={() => handleNavClick('listening', 'רשימת האזנה')}
           >
             <ListMusic size={24} />
             <span>רשימת האזנה</span>
@@ -64,7 +94,7 @@ function App() {
           <Link 
             to="/compositions" 
             className={`nav-item ${activeTab === 'compositions' ? 'active' : ''}`}
-            onClick={() => setActiveTab('compositions')}
+            onClick={() => handleNavClick('compositions', 'יצירות מפורטות')}
           >
             <Music size={24} />
             <span>יצירות מפורטות</span>
