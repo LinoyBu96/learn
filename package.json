@@ -2,7 +2,7 @@
   "name": "exam-helper",
   "version": "1.0.0",
   "description": "אפליקציה ללימוד מודרניזם במוזיקה",
-  "homepage": "https://LinoyBu96.github.io/examHelper",
+  "homepage": "https://LinoyBu96.github.io/learn",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
