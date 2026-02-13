@@ -283,6 +283,273 @@
   font-size: 1.1rem;
 }
 
+/* View Mode Toggle */
+.view-mode-toggle {
+  display: flex;
+  gap: 0.5rem;
+  background: #f7fafc;
+  padding: 0.5rem;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+}
+
+.mode-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4a5568;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mode-button:hover {
+  background: #edf2f7;
+}
+
+.mode-button.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.period-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.expand-all-btn,
+.collapse-all-btn {
+  padding: 0.5rem 1rem;
+  background: #f7fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #4a5568;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.expand-all-btn:hover,
+.collapse-all-btn:hover {
+  background: #edf2f7;
+  border-color: #cbd5e0;
+}
+
+/* Periods View */
+.periods-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.period-block {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-right: 6px solid var(--period-color);
+  transition: all 0.3s ease;
+}
+
+.period-block:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transform: translateX(-4px);
+}
+
+.period-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  cursor: pointer;
+  background: linear-gradient(90deg, var(--period-color) 0%, transparent 100%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: all 0.3s ease;
+}
+
+.period-header:hover {
+  background-position: 0 0;
+}
+
+.period-main-info {
+  flex: 1;
+}
+
+.period-main-info h3 {
+  font-size: 1.75rem;
+  color: #2d3748;
+  margin: 0 0 0.5rem 0;
+}
+
+.period-years {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: var(--period-color);
+  color: white;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.period-description {
+  color: #4a5568;
+  line-height: 1.6;
+  margin: 0.75rem 0;
+}
+
+.period-movements {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.movement-tag {
+  padding: 0.25rem 0.75rem;
+  background: #f7fafc;
+  color: #4a5568;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid #e2e8f0;
+}
+
+.period-expand-icon {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--period-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.period-expand-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.period-content {
+  padding: 2rem;
+  background: #f7fafc;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 5000px;
+  }
+}
+
+.composers-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.composer-period-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-right: 4px solid var(--period-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.composer-period-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.composer-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.composer-card-header h4 {
+  font-size: 1.25rem;
+  color: #2d3748;
+  margin: 0;
+  flex: 1;
+}
+
+.composer-card-years {
+  padding: 0.25rem 0.5rem;
+  background: #edf2f7;
+  color: #4a5568;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.composer-card-importance {
+  color: #718096;
+  font-size: 0.95rem;
+  margin: 0.5rem 0 1rem 0;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.composer-card-works {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid #f7fafc;
+}
+
+.composer-card-works strong {
+  display: block;
+  color: #2d3748;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.composer-card-works ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.composer-card-works li {
+  padding: 0.5rem 0;
+  color: #4a5568;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #f7fafc;
+}
+
+.composer-card-works li:last-child {
+  border-bottom: none;
+}
+
+.composer-card-works li:before {
+  content: "♪ ";
+  color: var(--period-color);
+  margin-left: 0.5rem;
+  font-weight: bold;
+}
+
 @media (max-width: 768px) {
   .timeline {
     padding-right: 1rem;
@@ -300,6 +567,29 @@
 
   .composers-grid {
     grid-template-columns: 1fr;
+  }
+
+  .view-mode-toggle {
+    flex-direction: column;
+  }
+
+  .mode-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .composers-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .period-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .period-expand-icon {
+    align-self: flex-end;
   }
 }
 
