@@ -85,6 +85,16 @@ function App() {
         <footer className="app-footer">
           <p>© 2026 - אפליקציה ללימוד מודרניזם במוזיקה</p>
           <p className="exam-info">מבוסס על חומרי הקורס של פרופ' בלה ברובר-לובובסקי</p>
+          <div className="credits">
+            <p className="credit-item">
+              <span className="credit-label">פיתוח הפלטפורמה:</span>
+              <span className="credit-name">מוטי פרץ</span>
+            </p>
+            <p className="credit-item">
+              <span className="credit-label">סיכום החומר:</span>
+              <span className="credit-name">דניאל טרסולה</span>
+            </p>
+          </div>
         </footer>
       </div>
     </Router>
